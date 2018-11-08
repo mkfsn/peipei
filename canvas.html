@@ -1,145 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
-<canvas id="draw" width="800" height="500"></canvas>
-<script>
-
-/*var canvas = document.getElementById('draw')
-var myGamePiece;
-function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
-    myGameArea.start();
-}
-
-var line = canvas.getContext('2d'); 
-line1.lineJoin = 'round';
-line.lineCap = 'round';
-line1.lineWidth = 20;
-line1.strokeStyle = "#000000";
-
-
-/*var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = 800;
-        this.canvas.height = 400;
-        this.canvas.style.cursor = "none"; //hide the original cursor
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.interval = setInterval(updateGameArea, 20);
-        
-        window.addEventListener('mousemove', function (e) {
-            myGameArea.x = e.pageX;
-            
-            myGameArea.y = e.pageY;
-            myGameArea.addEventListener('mouse',mouseMove);
-        })
-    }, 
-    clear : function(){
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
-}
-function component(width, height, color, x, y) {
-    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-}
-
-function updateGameArea() {
-    myGameArea.clear();
-    if (myGameArea.x && myGameArea.y) {
-        myGamePiece.x = myGameArea.x;
-        myGamePiece.y = myGameArea.y;               
-    }
-    myGamePiece.update();
-}
-
-function mouseMove(e){
-    if (this.draw = true){
-        this.ctx = this.getContext("2d");
-        this.ctx.strokeStyle='#000000';
-        this.ctx.lineWidth=10;
-        this.ctx.beginPath();
-        this.ctx.lineTo(e.pageX-this.offsetX,e.pageY-this.offsetY);
-    }
-}*/
-
-  var canvas = document.querySelector('#draw');
-  // could be 3d, if you want to make a video game
-  var ctx = canvas.getContext('2d');
-  canvas.width = 800;
-  canvas.height = 400;
-
-  ctx.lineJoin = 'round';
-  ctx.lineCap = 'round';
-  ctx.lineWidth = 10;
-  ctx.strokeStyle = 'black';
-
-  let lastX = undefined;
-  let lastY = undefined;
-
-  function draw(e) {
-    // stop the function if they are not mouse down
-    //listen for mouse move event
-    console.log(e);
-    if (lastX !== undefined && lastY !== undefined) {
-      ctx.moveTo(lastX, lastY);
-      ctx.lineTo(e.offsetX, e.offsetY);
-      ctx.stroke();
-    }
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-  }
-
-  canvas.addEventListener('mousemove', draw);
-   /*canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);*/
-
- function keyboardfeature(e){
-    if (canvas.keys && canvas.keys[66]) {ctx.strokeStyle = 'blue'; }
-    if (canvas.keys && canvas.keys[71]) {ctx.strokeStyle = 'green'; }
-    if (canvas.keys && canvas.keys[82]) {ctx.strokeStyle = 'red'; }
-    if (canvas.keys && canvas.keys[89]) {ctx.strokeStyle = 'yellow'; }
-    if (canvas.keys && canvas.keys[38]) {ctx.lineWidth +=1; }
-    if (canvas.keys && canvas.keys[40]) {ctx.lineWidth -=1; }
-    if (canvas.keys && canvas.keys[32]) {this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)}
-}
-
-  canvas.addEventListener('keyboard',function(e){
-    if (canvas.keys && canvas.keys[66]) {ctx.strokeStyle = 'blue'; }
-    if (canvas.keys && canvas.keys[71]) {ctx.strokeStyle = 'green'; }
-    if (canvas.keys && canvas.keys[82]) {ctx.strokeStyle = 'red'; }
-    if (canvas.keys && canvas.keys[89]) {ctx.strokeStyle = 'yellow'; }
-    if (canvas.keys && canvas.keys[38]) {ctx.lineWidth +=1; }
-    if (canvas.keys && canvas.keys[40]) {ctx.lineWidth -=1; }
-    if (canvas.keys && canvas.keys[32]) {this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)}
-  })
-
- 
-
-
-
-
-
-
-
-</script>
-<p>Move the cursor inside the canvas to move the red square.</p>
+    <canvas id="draw" width="800" height="500"></canvas>
+    <p>Move the cursor inside the canvas to move the red square.</p>
+    <script src="canvas.js"></script>
 </body>
 </html>
